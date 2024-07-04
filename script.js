@@ -20,4 +20,11 @@ function isInvalidInput(str){ // 28
     return str.match(regex); // 34
 }
 
-console.log(isInvalidInput("1e3")); // 35
+//console.log(isInvalidInput("10")); 35 & 36 & 37
+
+function addEntry(){ // 38
+    //const targetId = "#" + entryDropdown.value; 39 & 42
+    const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`); // 40 & 41
+    const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length; //43 & 44
+    const HTMLString = ``; // 45
+}
