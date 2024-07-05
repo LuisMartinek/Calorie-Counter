@@ -26,5 +26,7 @@ function addEntry(){ // 38
     //const targetId = "#" + entryDropdown.value; 39 & 42
     const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`); // 40 & 41
     const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length; //43 & 44
-    const HTMLString = ``; // 45
+    const HTMLString = `<label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
+    <input type="text" placeholder="Name" id="${entryDropdown.value}-${entryNumber}-name"/>
+    <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>`; // 45 & 46 6 47 & 48 & 49
 }
