@@ -22,11 +22,24 @@ function isInvalidInput(str){ // 28
 
 //console.log(isInvalidInput("10")); 35 & 36 & 37
 
+// adds Entry to our different 
 function addEntry(){ // 38
     //const targetId = "#" + entryDropdown.value; 39 & 42
     const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`); // 40 & 41
-    const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length; //43 & 44
+    const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1; //43 & 44 & 52
     const HTMLString = `<label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
     <input type="text" placeholder="Name" id="${entryDropdown.value}-${entryNumber}-name"/>
-    <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>`; // 45 & 46 6 47 & 48 & 49
+    <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
+    <input id="${entryDropdown.value}-${entryNumber}-calories" type="number" min="0" placeholder="Calories" />`; // 45 & 46 & 47 & 48 & 49 & 50
+    targetInputContainer.insertAdjacentHTML("beforeend", HTMLString); // 51 & 54 & 55
 }
+
+function getCaloriesFromInputs(list){ // 56
+let calories = 0; // 57
+for (const item of list){ // 58
+const currVal = cleanInputString(item.value); // 59 & 60
+}
+}
+
+addEntryButton.addEventListener('click', addEntry); // 52
+
