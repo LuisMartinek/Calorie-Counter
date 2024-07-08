@@ -34,11 +34,27 @@ function addEntry(){ // 38
     targetInputContainer.insertAdjacentHTML("beforeend", HTMLString); // 51 & 54 & 55
 }
 
+function calculateCalories(e){ // 67
+    e.preventDefault(); // 68
+    isError = false; // 68
+    const breakfastNumberInputs = document.querySelectorAll("#breakfast input[type=number]"); // 69
+    const lunchNumberInputs = document.querySelectorAll("#lunch input[type=number]") // 70
+
+}
+
 function getCaloriesFromInputs(list){ // 56
 let calories = 0; // 57
 for (const item of list){ // 58
 const currVal = cleanInputString(item.value); // 59 & 60
+const invalidInputMatch = isInvalidInput(currVal); // 61
+if (invalidInputMatch){ // 62
+    alert(`Invalid Input: ${invalidInputMatch[0]}`); // 63
+    isError = true // 64
+    return null // 64
 }
+calories += Number(currVal); // 65
+}
+return calories; // 66 
 }
 
 addEntryButton.addEventListener('click', addEntry); // 52
